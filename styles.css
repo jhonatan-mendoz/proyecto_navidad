@@ -36,15 +36,16 @@ body {
 
 h1 {
     font-family: 'Noto Serif', serif;
-    font-size: 2.8rem;
+    font-size: 2.5rem;
     margin-bottom: 10px;
     letter-spacing: 0.5px;
 }
 
 .subtitle {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     opacity: 0.9;
     margin-bottom: 20px;
+    font-style: italic;
 }
 
 .day-indicator {
@@ -84,8 +85,8 @@ h1 {
     background-color: white;
     color: #1a5276;
     border: 2px solid #1a5276;
-    padding: 15px 25px;
-    font-size: 1.2rem;
+    padding: 12px 20px;
+    font-size: 1.1rem;
     border-radius: 10px;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -93,7 +94,7 @@ h1 {
     align-items: center;
     gap: 10px;
     font-weight: 600;
-    min-width: 180px;
+    min-width: 160px;
     justify-content: center;
 }
 
@@ -133,7 +134,7 @@ h1 {
 h2 {
     color: #1a5276;
     font-family: 'Noto Serif', serif;
-    font-size: 2.2rem;
+    font-size: 2rem;
     margin-bottom: 25px;
     text-align: center;
     border-bottom: 3px solid #2e8b57;
@@ -141,10 +142,73 @@ h2 {
 }
 
 h3 {
-    color: #2e8b57;
-    font-size: 1.8rem;
+    color: #1a5276;
+    font-size: 1.6rem;
     margin-bottom: 15px;
     font-family: 'Noto Serif', serif;
+}
+
+h4 {
+    color: #2e8b57;
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+    font-family: 'Noto Serif', serif;
+    text-align: center;
+}
+
+h5 {
+    color: #1a5276;
+    font-size: 1.2rem;
+    margin: 20px 0 10px 0;
+    font-family: 'Noto Serif', serif;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.presentacion-content {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    text-align: justify;
+}
+
+.presentacion-content p {
+    margin-bottom: 20px;
+}
+
+.firma {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-left: 4px solid #1a5276;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.firma p {
+    margin-bottom: 5px;
+}
+
+.metodologia-content {
+    font-size: 1.2rem;
+    line-height: 1.8;
+}
+
+.pasos-metodologia {
+    margin: 20px 0 20px 30px;
+}
+
+.pasos-metodologia li {
+    margin-bottom: 15px;
+}
+
+.pasos-metodologia ul {
+    margin: 10px 0 10px 20px;
+    list-style-type: disc;
+}
+
+.pasos-metodologia ul li {
+    margin-bottom: 8px;
 }
 
 .gozos-container {
@@ -169,7 +233,7 @@ h3 {
 }
 
 .gozo-text {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     line-height: 1.8;
     text-align: justify;
     white-space: pre-line;
@@ -194,11 +258,22 @@ h3 {
     gap: 10px;
     font-weight: 600;
     margin-top: 10px;
+    width: 100%;
+    justify-content: center;
 }
 
 .gozo-music-btn:hover {
     background-color: #1a5276;
     transform: translateY(-2px);
+}
+
+.consideration-play-btn {
+    margin-top: 30px;
+    width: 100%;
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
 }
 
 .prayers-container {
@@ -213,12 +288,15 @@ h3 {
     padding: 25px;
     border-left: 5px solid #2e8b57;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
 }
 
 .prayer-text {
     font-size: 1.3rem;
     line-height: 1.7;
     text-align: justify;
+    flex-grow: 1;
 }
 
 .prayer-instruction {
@@ -258,13 +336,13 @@ h3 {
     background-color: #e8f4f8;
     color: #1a5276;
     border: 2px solid #1a5276;
-    padding: 15px 20px;
-    font-size: 1.2rem;
+    padding: 12px 18px;
+    font-size: 1.1rem;
     border-radius: 10px;
     cursor: pointer;
     transition: all 0.3s ease;
     font-weight: 600;
-    min-width: 100px;
+    min-width: 120px;
 }
 
 .day-btn:hover {
@@ -281,18 +359,32 @@ h3 {
     border-radius: 10px;
     padding: 30px;
     border-left: 5px solid #1a5276;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
 }
 
-.consideration-text {
-    font-size: 1.4rem;
-    line-height: 1.8;
-    text-align: justify;
-    white-space: pre-line;
-    padding: 20px;
+.consideration-section {
+    margin-bottom: 25px;
+}
+
+.consideration-section p {
+    font-size: 1.2rem;
+    line-height: 1.7;
+    padding: 15px;
     background-color: white;
     border-radius: 8px;
     border: 1px solid #e0e0e0;
-    min-height: 300px;
+}
+
+.consideration-text {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    text-align: justify;
+    white-space: pre-line;
+    padding: 15px;
+    background-color: white;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+    min-height: 200px;
 }
 
 .villancicos-container {
@@ -308,12 +400,19 @@ h3 {
     border-left: 5px solid #d32f2f;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
     position: relative;
+    display: flex;
+    flex-direction: column;
 }
 
 .villancico-text {
     font-size: 1.3rem;
     line-height: 1.7;
     text-align: center;
+    flex-grow: 1;
+}
+
+.villancico-text p {
+    margin-bottom: 10px;
 }
 
 .villancico-refrain {
@@ -449,11 +548,17 @@ h3 {
     }
     
     h1 {
-        font-size: 2.2rem;
+        font-size: 2rem;
     }
     
     h2 {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
+    }
+    
+    .nav-btn {
+        min-width: 140px;
+        font-size: 1rem;
+        padding: 10px 15px;
     }
 }
 
@@ -480,32 +585,50 @@ h3 {
     
     .player-info {
         text-align: center;
+        font-size: 1rem;
+    }
+    
+    .player-volume {
+        margin-left: 0;
+    }
+    
+    .prayers-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .gozo-text, .consideration-text, .prayer-text {
+        font-size: 1.1rem;
     }
 }
 
 @media (max-width: 480px) {
     h1 {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
     }
     
     .subtitle {
-        font-size: 1.1rem;
+        font-size: 1rem;
     }
     
     .gozo-music-btn, .villancico-play-btn, .day-btn {
-        font-size: 1.1rem;
-        padding: 15px 10px;
+        font-size: 1rem;
+        padding: 12px 10px;
     }
     
     .gozo-text, .consideration-text {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
+        padding: 10px;
     }
     
     .prayer-text, .villancico-text {
-        font-size: 1.1rem;
+        font-size: 1rem;
     }
     
     .day-progress {
         width: 150px;
+    }
+    
+    .player-volume-slider {
+        width: 80px;
     }
 }
