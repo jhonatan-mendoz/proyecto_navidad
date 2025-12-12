@@ -171,7 +171,7 @@ function playCurrentSong() {
     audioPlayer.play().then(() => {
         nowPlaying.textContent = `Reproduciendo: ${canciones[currentSongIndex].title}`;
     }).catch(() => {
-        nowPlaying.textContent = "Error al cargar la música";
+        nowPlaying.textContent = "Error: Archivo de audio no encontrado";
     });
 }
 
