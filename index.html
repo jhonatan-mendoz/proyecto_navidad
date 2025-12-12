@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novena de Aguinaldos - Navidad</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <h1><i class="fas fa-star"></i> Novena de Aguinaldos <i class="fas fa-star"></i></h1>
+                <p class="subtitle">Preparándonos para la Navidad del Señor</p>
+                <div class="day-indicator">
+                    <span id="current-day">Día 1</span>
+                    <div class="day-progress">
+                        <div class="progress-bar" id="progress-bar"></div>
+                    </div>
+                    <span id="total-days">de 9 días</span>
+                </div>
+            </div>
+        </header>
+
+        <nav class="main-nav">
+            <button class="nav-btn active" data-section="gozos">
+                <i class="fas fa-pray"></i> Gozos
+            </button>
+            <button class="nav-btn" data-section="oraciones">
+                <i class="fas fa-book-open"></i> Oraciones
+            </button>
+            <button class="nav-btn" data-section="consideraciones">
+                <i class="fas fa-brain"></i> Consideraciones
+            </button>
+            <button class="nav-btn" data-section="villancicos">
+                <i class="fas fa-music"></i> Villancicos
+            </button>
+        </nav>
+
+        <main class="main-content">
+            <section id="gozos-section" class="content-section active">
+                <h2><i class="fas fa-star-of-david"></i> Gozos de la Novena</h2>
+                <div class="gozos-container">
+                    <div class="gozos-list" id="gozos-list"></div>
+                    <div class="gozo-display">
+                        <h3 class="gozo-title" id="gozo-title">Seleccione un Gozo</h3>
+                        <div class="gozo-text" id="gozo-text">
+                            <p>Presione uno de los botones para mostrar el texto del gozo correspondiente.</p>
+                        </div>
+                        <div class="music-controls">
+                            <button class="music-btn" id="play-music-btn">
+                                <i class="fas fa-play"></i> Reproducir "Ven a nuestras almas"
+                            </button>
+                            <div class="volume-control">
+                                <i class="fas fa-volume-up"></i>
+                                <input type="range" min="0" max="100" value="70" class="volume-slider" id="volume-slider">
+                                <span class="volume-value" id="volume-value">70%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="oraciones-section" class="content-section">
+                <h2><i class="fas fa-praying-hands"></i> Oraciones Diarias</h2>
+                <div class="prayers-container">
+                    <div class="prayer-card">
+                        <h3>Oración para todos los días</h3>
+                        <div class="prayer-text">
+                            <p>Benignísimo Dios de infinita caridad, que tanto amasteis a los hombres, que les disteis en vuestro Hijo la mejor prenda de vuestro amor para que hecho hombre en las entrañas de una Virgen, naciese en un pesebre para nuestra salud y remedio; yo, en nombre de todos los mortales, os doy infinitas gracias por tan soberano beneficio.</p>
+                            <p>En torno a él os ofrezco la pobreza, humildad y demás virtudes de vuestro hijo humanado; suplicándolos por sus divinos méritos, por las incomodidades con que nació y por las tiernas lágrimas que derramó en su pesebre, que dispongáis nuestros corazones con humildad profunda, con amor encendido, con total desprecio de todo lo terreno, para que Jesús recién nacido tenga en ellos su cuna y more eternamente. <strong>Amén.</strong></p>
+                            <p class="prayer-instruction">(Se reza tres veces el Gloria al Padre)</p>
+                        </div>
+                    </div>
+                    
+                    <div class="prayer-card">
+                        <h3>Oración a la Santísima Virgen</h3>
+                        <div class="prayer-text">
+                            <p>Soberana María, que por tus grandes virtudes y especialmente por tu humildad, mereciste que todo un Dios te escogiera por madre suya, te suplico que tu misma prepares y dispongas mi alma, y la de todos los que en este tiempo hagan esta novena, para el nacimiento espiritual de tu adorado Hijo.</p>
+                            <p>¡Oh dulcísima Madre! Comunicame algo del profundo recogimiento y divina ternura con la que guardaste tu, para que nos hagas menos indignos de verle, amarle y adorarle por toda la eternidad. <strong>Amén.</strong></p>
+                            <p class="prayer-instruction">(Se reza nueve veces el Avemaría)</p>
+                        </div>
+                    </div>
+                    
+                    <div class="prayer-card">
+                        <h3>Oración a San José</h3>
+                        <div class="prayer-text">
+                            <p>¡Oh Santísimo San José! Esposo de María y padre adoptivo de Jesús. Infinitas gracias doy a Dios porque te escogió para tan altos ministerios y te adornó con todos los dones proporcionados a tan excelente grandeza.</p>
+                            <p>Te ruego, por el amor que tuviste al Divino Niño, me abrases en fervorosos deseos de verle y recibirle sacramentalmente, mientras en su divina esencia le veo y le gozo en el cielo.</p>
+                            <p class="prayer-instruction">(Se reza el Padrenuestro, el Avemaría y el Gloria)</p>
+                        </div>
+                    </div>
+                    
+                    <div class="prayer-card">
+                        <h3>Consecuencia al Niño Jesús</h3>
+                        <div class="prayer-text">
+                            <p>Acordados ¡Oh dulcísimo Niño Jesús! Que dijiste a la Venerable Margarita del Santísimo Sacramento, y en persona suya a todos tus devotos, estas palabras tan consoladoras para nuestra pobre humanidad agobiada y doliente: "Todo lo que quieras pedir, pídelo por los méritos de mi infancia y nada te será negado".</p>
+                            <p>Llenos de confianza en Ti ¡Oh Jesús, que eres la misma verdad! Venimos a exponerte toda nuestra miseria. Ayudadnos a llevar una vida santa, para conseguir una eternidad bienaventurada. Concédenos, por los méritos de tu encarnación y de tu infancia, la gracia… de la cual necesitamos tanto.</p>
+                            <p>Nos entregamos a Ti ¡Oh Niño omnipotente! Seguros de que no quedará frustrada nuestra esperanza, y de que en virtud de tu divina promesa, acogerás y despacharas favorablemente nuestra súplica. <strong>Amén.</strong></p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="consideraciones-section" class="content-section">
+                <h2><i class="fas fa-lightbulb"></i> Consideraciones Diarias</h2>
+                <div class="days-selector">
+                    <div class="days-buttons" id="days-buttons"></div>
+                </div>
+                <div class="consideration-display">
+                    <h3 id="consideration-title">Consideración del Día 1</h3>
+                    <div class="consideration-text" id="consideration-text"></div>
+                </div>
+            </section>
+
+            <section id="villancicos-section" class="content-section">
+                <h2><i class="fas fa-guitar"></i> Villancicos Navideños</h2>
+                <div class="villancicos-container">
+                    <div class="villancico-card">
+                        <h3>Tutaina (Tradicional Española)</h3>
+                        <div class="villancico-text">
+                            <p class="villancico-refrain">Tutaina tuturuma<br>Tutaina tuturumaina<br>Tutaina tuturuma, turuma<br>Tutaina tuturumaina.</p>
+                            <p>Los pastores de Belén<br>Vienen a adorar el niño;<br>La virgen y san José<br>Los reciben con cariño.</p>
+                            <p class="villancico-refrain">Tutaina tuturuma<br>Tutaina tuturumaina<br>Tutaina tuturuma, turuma<br>Tutaina tuturumaina.</p>
+                            <p>Tres reyes vienen también<br>Con incienso, mirra y oro,<br>A ofrecer a Dios su bien<br>Como el más grande tesoro.</p>
+                            <p class="villancico-refrain">Tutaina tuturuma<br>Tutaina tuturumaina<br>Tutaina tuturuma, turuma<br>Tutaina tuturumaina.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="villancico-card">
+                        <h3>A la nanita nana (Tradicional Española)</h3>
+                        <div class="villancico-text">
+                            <p class="villancico-refrain">A la nanita nana, nanita ea, nanita ea,<br>mi Jesús tiene sueño, bendito sea, bendito sea.</p>
+                            <p>Fuentecilla que corres clara y sonora<br>ruiseñor en la selva cantando lloras<br>callad mientras la cuna se balancea<br>a la nanita nana, nanita ea.</p>
+                            <p class="villancico-refrain">A la nanita nana, nanita ea, nanita ea,<br>mi Jesús tiene sueño, bendito sea, bendito sea.</p>
+                            <p>Manojito de rosas y de alelíes<br>¿Qué es lo que estás soñando que te sonríes?<br>Cuáles son tus sueños, dilo alma mía,<br>mas. ¿Qué es lo que murmuras? Eucaristía.</p>
+                            <p class="villancico-refrain">A la nanita nana, nanita ea, nanita ea,<br>mi Jesús tiene sueño, bendito sea, bendito sea.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="villancico-card">
+                        <h3>Campana sobre campana (Tradicional Andaluza)</h3>
+                        <div class="villancico-text">
+                            <p>Campana sobre campana,<br>y sobre campana una,<br>asómate a la ventana,<br>verás al Niño en la cuna.</p>
+                            <p class="villancico-refrain">Belén, campanas de Belén,<br>que los ángeles tocan<br>¿qué nueva me traéis?</p>
+                            <p>Recogido tu rebaño<br>¿a dónde vas pastorcillo?<br>Voy a llevar al portal<br>requesón, manteca y vino.</p>
+                            <p class="villancico-refrain">Belén, campanas de Belén,<br>que los ángeles tocan<br>¿qué nueva me traéis?</p>
+                        </div>
+                    </div>
+                    
+                    <div class="villancico-card">
+                        <h3>El tamborilero (Katherine K. Davis)</h3>
+                        <div class="villancico-text">
+                            <p>El camino que lleva a Belén<br>baja hasta el valle que la nieve cubrió.</p>
+                            <p>Los pastorcillos quieren ver a su Rey,<br>le traen regalos en su humilde zurrón<br>al Redentor, al Redentor.</p>
+                            <p>Yo quisiera poner a tu pies<br>algún presente que te agrade Señor,<br>mas Tú ya sabes que soy pobre también,<br>y no poseo más que un viejo tambor.</p>
+                            <p class="villancico-refrain">(rom pom pom pom, rom pom pom)</p>
+                            <p>¡En tu honor frente al portal tocaré con mi tambor!</p>
+                        </div>
+                    </div>
+                    
+                    <div class="villancico-card">
+                        <h3>Noche de paz</h3>
+                        <div class="villancico-text">
+                            <p class="villancico-author">Letra: Joseph Mohr, 1792-1848<br>Música: Franz Gruber, 1787-1863</p>
+                            <p>Noche de paz, noche de amor<br>Todo duerme en derredor<br>sólo velan mirando la faz de su niño<br>en angélica paz José y María en Belén<br>José y María en Belén</p>
+                            <p>Noche de paz, noche de amor<br>Llena el cielo un resplandor<br>en la altura resuena un cantar:<br>os anuncio una dicha sin par<br>que en la tierra ha nacido Dios hoy<br>en Belén de Judá<br>Hoy en Belén de Judá</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <div class="music-player-fixed">
+            <div class="player-info">
+                <span id="now-playing">Seleccione una canción</span>
+            </div>
+            <div class="player-controls">
+                <button class="player-btn" id="prev-btn">
+                    <i class="fas fa-step-backward"></i>
+                </button>
+                <button class="player-btn play-btn" id="main-play-btn">
+                    <i class="fas fa-play"></i>
+                </button>
+                <button class="player-btn" id="next-btn">
+                    <i class="fas fa-step-forward"></i>
+                </button>
+                <button class="player-btn" id="stop-btn">
+                    <i class="fas fa-stop"></i>
+                </button>
+            </div>
+            <div class="player-volume">
+                <i class="fas fa-volume-up"></i>
+                <input type="range" min="0" max="100" value="70" class="player-volume-slider" id="player-volume-slider">
+            </div>
+        </div>
+
+        <footer class="footer">
+            <p>Página diseñada para facilitar el rezo de la Novena de Aguinaldos</p>
+            <p>© 2023 Novena de Aguinaldos - Mi Municipio Digital</p>
+        </footer>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
