@@ -10,8 +10,12 @@ const navButtons = document.querySelectorAll('.nav-btn');
 const contentSections = document.querySelectorAll('.content-section');
 const gozosContainer = document.getElementById('gozos-container');
 const daysButtons = document.getElementById('days-buttons');
+const considerationDate = document.getElementById('consideration-date');
 const considerationTitle = document.getElementById('consideration-title');
+const considerationSigno = document.getElementById('consideration-signo');
+const considerationLectura = document.getElementById('consideration-lectura');
 const considerationText = document.getElementById('consideration-text');
+const considerationCompromiso = document.getElementById('consideration-compromiso');
 const nowPlaying = document.getElementById('now-playing');
 const mainPlayBtn = document.getElementById('main-play-btn');
 const stopBtn = document.getElementById('stop-btn');
@@ -28,12 +32,20 @@ function initApp() {
 }
 
 function setupCurrentDay() {
-    currentDay = 1;
+    // Obtener el día actual (16-24 de diciembre)
+    const today = new Date();
+    const currentDate = today.getDate();
+    if (currentDate >= 16 && currentDate <= 24) {
+        currentDay = currentDate - 15; // 16 dic = día 1, 17 dic = día 2, etc.
+    } else {
+        currentDay = 1; // Por defecto, día 1
+    }
     updateDayIndicator();
 }
 
 function updateDayIndicator() {
-    dayIndicator.textContent = `Día ${currentDay}`;
+    const consideration = consideraciones[currentDay - 1];
+    dayIndicator.textContent = consideration.date;
     totalDays.textContent = `de ${consideraciones.length} días`;
     const progressPercentage = (currentDay / consideraciones.length) * 100;
     progressBar.style.width = `${progressPercentage}%`;
@@ -61,7 +73,7 @@ function setupGozos() {
         gozoCard.innerHTML = `
             <h3>${gozo.title}</h3>
             <div class="gozo-text">${gozo.text}</div>
-            <button class="gozo-music-btn" data-song-id="1">
+            <button class="gozo-music-btn" data-song-id="6">
                 <i class="fas fa-play"></i> Reproducir "Ven a nuestras almas"
             </button>
         `;
@@ -72,7 +84,7 @@ function setupGozos() {
     const gozoMusicBtns = document.querySelectorAll('.gozo-music-btn');
     gozoMusicBtns.forEach(btn => {
         btn.addEventListener('click', () => {
-            playSongById(1);
+            playSongById(6); // ID 6 = "Ven a nuestras almas"
         });
     });
 }
@@ -81,7 +93,7 @@ function setupConsiderations() {
     consideraciones.forEach((consideracion, index) => {
         const button = document.createElement('button');
         button.className = 'day-btn';
-        button.textContent = `Día ${index + 1}`;
+        button.textContent = consideracion.date;
         button.dataset.id = consideracion.id;
         
         button.addEventListener('click', () => {
@@ -103,11 +115,34 @@ function setupConsiderations() {
 }
 
 function displayConsideration(consideracion) {
+    considerationDate.textContent = consideracion.date;
     considerationTitle.textContent = consideracion.title;
-    considerationText.textContent = consideracion.text;
+    considerationSigno.textContent = consideracion.signo;
+    considerationLectura.textContent = consideracion.lectura;
+    considerationText.textContent = consideracion.meditacion;
+    considerationCompromiso.textContent = consideracion.compromiso;
 }
 
 function setupVillancicos() {
+    const villancicosContainer = document.querySelector('.villancicos-container');
+    
+    villancicos.forEach(villancico => {
+        const villancicoCard = document.createElement('div');
+        villancicoCard.className = 'villancico-card';
+        
+        villancicoCard.innerHTML = `
+            <h3>${villancico.title}</h3>
+            <div class="villancico-text">
+                ${villancico.text.split('\n').map(line => `<p>${line}</p>`).join('')}
+            </div>
+            <button class="villancico-play-btn" data-song-id="${villancico.id}">
+                <i class="fas fa-play"></i> Reproducir "${villancico.title}"
+            </button>
+        `;
+        
+        villancicosContainer.appendChild(villancicoCard);
+    });
+    
     const villancicoBtns = document.querySelectorAll('.villancico-play-btn');
     villancicoBtns.forEach(btn => {
         btn.addEventListener('click', () => {
@@ -150,7 +185,7 @@ function setupAudioPlayer() {
 }
 
 function playSongById(songId) {
-    const song = canciones.find(s => s.id === songId);
+    const song = villancicos.find(s => s.id === songId);
     if (!song) return;
     
     lastPlayedSong = song;
@@ -158,8 +193,9 @@ function playSongById(songId) {
     
     audioPlayer.play().then(() => {
         nowPlaying.textContent = `Reproduciendo: ${song.title}`;
-    }).catch(() => {
-        nowPlaying.textContent = "Error: Archivo de audio no encontrado";
+    }).catch((error) => {
+        console.error("Error al reproducir:", error);
+        nowPlaying.textContent = "Error: No se pudo reproducir el audio";
     });
 }
 
