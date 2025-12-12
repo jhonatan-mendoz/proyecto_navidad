@@ -42,25 +42,7 @@
         <main class="main-content">
             <section id="gozos-section" class="content-section active">
                 <h2><i class="fas fa-star-of-david"></i> Gozos de la Novena</h2>
-                <div class="gozos-container">
-                    <div class="gozos-list" id="gozos-list"></div>
-                    <div class="gozo-display">
-                        <h3 class="gozo-title" id="gozo-title">Seleccione un Gozo</h3>
-                        <div class="gozo-text" id="gozo-text">
-                            <p>Presione uno de los botones para mostrar el texto del gozo correspondiente.</p>
-                        </div>
-                        <div class="music-controls">
-                            <button class="music-btn" id="play-music-btn">
-                                <i class="fas fa-play"></i> Reproducir "Ven a nuestras almas"
-                            </button>
-                            <div class="volume-control">
-                                <i class="fas fa-volume-up"></i>
-                                <input type="range" min="0" max="100" value="70" class="volume-slider" id="volume-slider">
-                                <span class="volume-value" id="volume-value">70%</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <div class="gozos-container" id="gozos-container"></div>
             </section>
 
             <section id="oraciones-section" class="content-section">
@@ -127,6 +109,9 @@
                             <p>Tres reyes vienen también<br>Con incienso, mirra y oro,<br>A ofrecer a Dios su bien<br>Como el más grande tesoro.</p>
                             <p class="villancico-refrain">Tutaina tuturuma<br>Tutaina tuturumaina<br>Tutaina tuturuma, turuma<br>Tutaina tuturumaina.</p>
                         </div>
+                        <button class="villancico-play-btn" data-song-id="2">
+                            <i class="fas fa-play"></i> Reproducir Tutaina
+                        </button>
                     </div>
                     
                     <div class="villancico-card">
@@ -138,6 +123,9 @@
                             <p>Manojito de rosas y de alelíes<br>¿Qué es lo que estás soñando que te sonríes?<br>Cuáles son tus sueños, dilo alma mía,<br>mas. ¿Qué es lo que murmuras? Eucaristía.</p>
                             <p class="villancico-refrain">A la nanita nana, nanita ea, nanita ea,<br>mi Jesús tiene sueño, bendito sea, bendito sea.</p>
                         </div>
+                        <button class="villancico-play-btn" data-song-id="3">
+                            <i class="fas fa-play"></i> Reproducir A la nanita nana
+                        </button>
                     </div>
                     
                     <div class="villancico-card">
@@ -148,6 +136,9 @@
                             <p>Recogido tu rebaño<br>¿a dónde vas pastorcillo?<br>Voy a llevar al portal<br>requesón, manteca y vino.</p>
                             <p class="villancico-refrain">Belén, campanas de Belén,<br>que los ángeles tocan<br>¿qué nueva me traéis?</p>
                         </div>
+                        <button class="villancico-play-btn" data-song-id="4">
+                            <i class="fas fa-play"></i> Reproducir Campana sobre campana
+                        </button>
                     </div>
                     
                     <div class="villancico-card">
@@ -159,6 +150,9 @@
                             <p class="villancico-refrain">(rom pom pom pom, rom pom pom)</p>
                             <p>¡En tu honor frente al portal tocaré con mi tambor!</p>
                         </div>
+                        <button class="villancico-play-btn" data-song-id="5">
+                            <i class="fas fa-play"></i> Reproducir El tamborilero
+                        </button>
                     </div>
                     
                     <div class="villancico-card">
@@ -168,6 +162,9 @@
                             <p>Noche de paz, noche de amor<br>Todo duerme en derredor<br>sólo velan mirando la faz de su niño<br>en angélica paz José y María en Belén<br>José y María en Belén</p>
                             <p>Noche de paz, noche de amor<br>Llena el cielo un resplandor<br>en la altura resuena un cantar:<br>os anuncio una dicha sin par<br>que en la tierra ha nacido Dios hoy<br>en Belén de Judá<br>Hoy en Belén de Judá</p>
                         </div>
+                        <button class="villancico-play-btn" data-song-id="6">
+                            <i class="fas fa-play"></i> Reproducir Noche de paz
+                        </button>
                     </div>
                 </div>
             </section>
@@ -178,14 +175,8 @@
                 <span id="now-playing">Seleccione una canción</span>
             </div>
             <div class="player-controls">
-                <button class="player-btn" id="prev-btn">
-                    <i class="fas fa-step-backward"></i>
-                </button>
                 <button class="player-btn play-btn" id="main-play-btn">
                     <i class="fas fa-play"></i>
-                </button>
-                <button class="player-btn" id="next-btn">
-                    <i class="fas fa-step-forward"></i>
                 </button>
                 <button class="player-btn" id="stop-btn">
                     <i class="fas fa-stop"></i>
