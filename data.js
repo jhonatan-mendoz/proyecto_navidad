@@ -141,7 +141,7 @@ Tal era la vida de expectativa de María! Era inaudita en sí misma, mas no por 
 
 Para que se cumpliese esta predicción, Dios se sirvió de un medio que no parecía tener ninguna relación con este objeto, a saber: la orden dada por el emperador Augusto de que todos los súbditos del imperio romano se empadronasen en el lugar de donde eran originarios. María y José como descendientes que eran de David, estaban obligados a ir a Belén.
 
-No ignoraba Jesús en qué lugar debía nacer y así inspira a sus parents que se entreguen a la Providencia, y que de esta manera concurran a la ejecución de sus designios. Almas interiores, observad este manejo del Divino Niño, porque es el más importante de la vida espiritual: aprended que el que se haya entregado a Dios ya no ha de pertenecer a sí mismo, ni ha de querer si no lo que Dios quiera para él.`
+No ignoraba Jesús en qué lugar debía nacer y así inspira a sus padres que se entreguen a la Providencia, y que de esta manera concurran a la ejecución de sus designios. Almas interiores, observad este manejo del Divino Niño, porque es el más importante de la vida espiritual: aprended que el que se haya entregado a Dios ya no ha de pertenecer a sí mismo, ni ha de querer si no lo que Dios quiera para él.`
     },
     {
         id: 7,
@@ -186,31 +186,31 @@ const canciones = [
     { 
         id: 1, 
         title: "Ven a nuestras almas", 
-        file: "https://assets.mixkit.co/music/preview/mixkit-silent-night-119.mp3" 
+        file: "ven-a-nuestras-almas.mp3" 
     },
     { 
         id: 2, 
         title: "Tutaina", 
-        file: "https://assets.mixkit.co/music/preview/mixkit-christmas-is-coming-1174.mp3" 
+        file: "tutaina.mp3" 
     },
     { 
         id: 3, 
         title: "A la nanita nana", 
-        file: "https://assets.mixkit.co/music/preview/mixkit-silent-night-119.mp3" 
+        file: "nanita-nana.mp3" 
     },
     { 
         id: 4, 
         title: "Campana sobre campana", 
-        file: "https://assets.mixkit.co/music/preview/mixkit-christmas-is-coming-1174.mp3" 
+        file: "campana-sobre-campana.mp3" 
     },
     { 
         id: 5, 
         title: "El tamborilero", 
-        file: "https://assets.mixkit.co/music/preview/mixkit-silent-night-119.mp3" 
+        file: "tamborilero.mp3" 
     },
     { 
         id: 6, 
         title: "Noche de paz", 
-        file: "https://assets.mixkit.co/music/preview/mixkit-christmas-is-coming-1174.mp3" 
+        file: "noche-de-paz.mp3" 
     }
 ];
