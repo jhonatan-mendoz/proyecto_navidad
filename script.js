@@ -1,26 +1,19 @@
 let currentDay = 1;
 let audioPlayer = null;
-let currentSongIndex = 0;
 let isPlaying = false;
+let lastPlayedSong = null;
 
 const dayIndicator = document.getElementById('current-day');
 const totalDays = document.getElementById('total-days');
 const progressBar = document.getElementById('progress-bar');
 const navButtons = document.querySelectorAll('.nav-btn');
 const contentSections = document.querySelectorAll('.content-section');
-const gozosList = document.getElementById('gozos-list');
-const gozoTitle = document.getElementById('gozo-title');
-const gozoText = document.getElementById('gozo-text');
+const gozosContainer = document.getElementById('gozos-container');
 const daysButtons = document.getElementById('days-buttons');
 const considerationTitle = document.getElementById('consideration-title');
 const considerationText = document.getElementById('consideration-text');
-const playMusicBtn = document.getElementById('play-music-btn');
-const volumeSlider = document.getElementById('volume-slider');
-const volumeValue = document.getElementById('volume-value');
 const nowPlaying = document.getElementById('now-playing');
 const mainPlayBtn = document.getElementById('main-play-btn');
-const prevBtn = document.getElementById('prev-btn');
-const nextBtn = document.getElementById('next-btn');
 const stopBtn = document.getElementById('stop-btn');
 const playerVolumeSlider = document.getElementById('player-volume-slider');
 
@@ -29,7 +22,7 @@ function initApp() {
     setupNavigation();
     setupGozos();
     setupConsiderations();
-    setupMusicControls();
+    setupVillancicos();
     setupAudioPlayer();
     setupKeyboardShortcuts();
 }
@@ -62,30 +55,26 @@ function setupNavigation() {
 
 function setupGozos() {
     gozos.forEach(gozo => {
-        const button = document.createElement('button');
-        button.className = 'gozo-btn';
-        button.textContent = gozo.title;
-        button.dataset.id = gozo.id;
+        const gozoCard = document.createElement('div');
+        gozoCard.className = 'gozo-card';
         
-        button.addEventListener('click', () => {
-            document.querySelectorAll('.gozo-btn').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            button.classList.add('active');
-            displayGozo(gozo);
-        });
+        gozoCard.innerHTML = `
+            <h3>${gozo.title}</h3>
+            <div class="gozo-text">${gozo.text}</div>
+            <button class="gozo-music-btn" data-song-id="1">
+                <i class="fas fa-play"></i> Reproducir "Ven a nuestras almas"
+            </button>
+        `;
         
-        gozosList.appendChild(button);
+        gozosContainer.appendChild(gozoCard);
     });
     
-    if (gozos.length > 0) {
-        document.querySelector('.gozo-btn').click();
-    }
-}
-
-function displayGozo(gozo) {
-    gozoTitle.textContent = gozo.title;
-    gozoText.textContent = gozo.text;
+    const gozoMusicBtns = document.querySelectorAll('.gozo-music-btn');
+    gozoMusicBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            playSongById(1);
+        });
+    });
 }
 
 function setupConsiderations() {
@@ -118,29 +107,26 @@ function displayConsideration(consideracion) {
     considerationText.textContent = consideracion.text;
 }
 
-function setupMusicControls() {
-    playMusicBtn.addEventListener('click', () => {
-        currentSongIndex = 0;
-        playCurrentSong();
-    });
-    
-    volumeSlider.addEventListener('input', () => {
-        updateVolume();
-    });
-    
-    playerVolumeSlider.addEventListener('input', () => {
-        updatePlayerVolume();
+function setupVillancicos() {
+    const villancicoBtns = document.querySelectorAll('.villancico-play-btn');
+    villancicoBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const songId = parseInt(btn.getAttribute('data-song-id'));
+            playSongById(songId);
+        });
     });
 }
 
 function setupAudioPlayer() {
     audioPlayer = new Audio();
-    audioPlayer.volume = volumeSlider.value / 100;
+    audioPlayer.volume = 0.7;
     
     audioPlayer.addEventListener('play', () => {
         isPlaying = true;
         mainPlayBtn.innerHTML = '<i class="fas fa-pause"></i>';
-        nowPlaying.textContent = `Reproduciendo: ${canciones[currentSongIndex].title}`;
+        if (lastPlayedSong) {
+            nowPlaying.textContent = `Reproduciendo: ${lastPlayedSong.title}`;
+        }
     });
     
     audioPlayer.addEventListener('pause', () => {
@@ -151,25 +137,27 @@ function setupAudioPlayer() {
     audioPlayer.addEventListener('ended', () => {
         isPlaying = false;
         mainPlayBtn.innerHTML = '<i class="fas fa-play"></i>';
-        playNextSong();
+        audioPlayer.currentTime = 0;
     });
     
     mainPlayBtn.addEventListener('click', togglePlayback);
-    prevBtn.addEventListener('click', playPrevSong);
-    nextBtn.addEventListener('click', playNextSong);
     stopBtn.addEventListener('click', stopPlayback);
     
-    updateVolume();
-    updatePlayerVolume();
+    playerVolumeSlider.addEventListener('input', () => {
+        const volume = playerVolumeSlider.value / 100;
+        audioPlayer.volume = volume;
+    });
 }
 
-function playCurrentSong() {
-    if (!audioPlayer) return;
+function playSongById(songId) {
+    const song = canciones.find(s => s.id === songId);
+    if (!song) return;
     
-    audioPlayer.src = canciones[currentSongIndex].file;
+    lastPlayedSong = song;
+    audioPlayer.src = song.file;
     
     audioPlayer.play().then(() => {
-        nowPlaying.textContent = `Reproduciendo: ${canciones[currentSongIndex].title}`;
+        nowPlaying.textContent = `Reproduciendo: ${song.title}`;
     }).catch(() => {
         nowPlaying.textContent = "Error: Archivo de audio no encontrado";
     });
@@ -181,23 +169,14 @@ function togglePlayback() {
     if (isPlaying) {
         audioPlayer.pause();
     } else {
-        if (!audioPlayer.src) {
-            currentSongIndex = 0;
-            playCurrentSong();
-        } else {
+        if (!audioPlayer.src && lastPlayedSong) {
+            playSongById(lastPlayedSong.id);
+        } else if (audioPlayer.src) {
             audioPlayer.play();
+        } else {
+            nowPlaying.textContent = "Seleccione una canción primero";
         }
     }
-}
-
-function playNextSong() {
-    currentSongIndex = (currentSongIndex + 1) % canciones.length;
-    playCurrentSong();
-}
-
-function playPrevSong() {
-    currentSongIndex = (currentSongIndex - 1 + canciones.length) % canciones.length;
-    playCurrentSong();
 }
 
 function stopPlayback() {
@@ -210,48 +189,11 @@ function stopPlayback() {
     nowPlaying.textContent = "Música detenida";
 }
 
-function updateVolume() {
-    if (!audioPlayer) return;
-    
-    const volume = volumeSlider.value / 100;
-    audioPlayer.volume = volume;
-    volumeValue.textContent = `${volumeSlider.value}%`;
-}
-
-function updatePlayerVolume() {
-    if (!audioPlayer) return;
-    
-    const volume = playerVolumeSlider.value / 100;
-    audioPlayer.volume = volume;
-}
-
 function setupKeyboardShortcuts() {
     document.addEventListener('keydown', (event) => {
-        if (event.key >= '1' && event.key <= '9' && document.getElementById('gozos-section').classList.contains('active')) {
-            const index = parseInt(event.key) - 1;
-            if (index < gozos.length) {
-                document.querySelectorAll('.gozo-btn')[index].click();
-            }
-        }
-        
-        if (event.key >= '1' && event.key <= '9' && document.getElementById('consideraciones-section').classList.contains('active')) {
-            const index = parseInt(event.key) - 1;
-            if (index < consideraciones.length) {
-                document.querySelectorAll('.day-btn')[index].click();
-            }
-        }
-        
         if (event.code === 'Space' && !event.target.matches('button, input, textarea')) {
             event.preventDefault();
             togglePlayback();
-        }
-        
-        if (event.code === 'ArrowRight') {
-            playNextSong();
-        }
-        
-        if (event.code === 'ArrowLeft') {
-            playPrevSong();
         }
         
         if (event.code === 'Escape') {
