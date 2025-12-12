@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Novena de Aguinaldos - Navidad</title>
+    <title>Novena de Navidad 2025 - Los Gestos de la Misericordia</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
@@ -12,10 +12,10 @@
     <div class="container">
         <header class="header">
             <div class="header-content">
-                <h1><i class="fas fa-star"></i> Novena de Aguinaldos <i class="fas fa-star"></i></h1>
-                <p class="subtitle">Preparándonos para la Navidad del Señor</p>
+                <h1><i class="fas fa-star"></i> Novena de Navidad 2025 <i class="fas fa-star"></i></h1>
+                <p class="subtitle">LOS GESTOS DE LA MISERICORDIA EN LOS PERSONAJES DEL ADVIENTO Y LA NAVIDAD</p>
                 <div class="day-indicator">
-                    <span id="current-day">Día 1</span>
+                    <span id="current-day">16 de diciembre</span>
                     <div class="day-progress">
                         <div class="progress-bar" id="progress-bar"></div>
                     </div>
@@ -25,11 +25,17 @@
         </header>
 
         <nav class="main-nav">
-            <button class="nav-btn active" data-section="gozos">
-                <i class="fas fa-pray"></i> Gozos
+            <button class="nav-btn active" data-section="presentacion">
+                <i class="fas fa-info-circle"></i> Presentación
+            </button>
+            <button class="nav-btn" data-section="metodologia">
+                <i class="fas fa-list-ol"></i> Metodología
             </button>
             <button class="nav-btn" data-section="oraciones">
-                <i class="fas fa-book-open"></i> Oraciones
+                <i class="fas fa-praying-hands"></i> Oraciones
+            </button>
+            <button class="nav-btn" data-section="gozos">
+                <i class="fas fa-pray"></i> Gozos
             </button>
             <button class="nav-btn" data-section="consideraciones">
                 <i class="fas fa-brain"></i> Consideraciones
@@ -40,159 +46,172 @@
         </nav>
 
         <main class="main-content">
-            <section id="gozos-section" class="content-section active">
-                <h2><i class="fas fa-star-of-david"></i> Gozos de la Novena</h2>
-                <div class="gozos-container" id="gozos-container"></div>
-            </section>
-
-            <section id="oraciones-section" class="content-section">
-                <h2><i class="fas fa-praying-hands"></i> Oraciones Diarias</h2>
-                <div class="prayers-container">
-                    <div class="prayer-card">
-                        <h3>Oración para todos los días</h3>
-                        <div class="prayer-text">
-                            <p>Benignísimo Dios de infinita caridad, que tanto amasteis a los hombres, que les disteis en vuestro Hijo la mejor prenda de vuestro amor para que hecho hombre en las entrañas de una Virgen, naciese en un pesebre para nuestra salud y remedio; yo, en nombre de todos los mortales, os doy infinitas gracias por tan soberano beneficio.</p>
-                            <p>En torno a él os ofrezco la pobreza, humildad y demás virtudes de vuestro hijo humanado; suplicándolos por sus divinos méritos, por las incomodidades con que nació y por las tiernas lágrimas que derramó en su pesebre, que dispongáis nuestros corazones con humildad profunda, con amor encendido, con total desprecio de todo lo terreno, para que Jesús recién nacido tenga en ellos su cuna y more eternamente. <strong>Amén.</strong></p>
-                            <p class="prayer-instruction"><i>(Se reza tres veces el Gloria al Padre)</i></p>
-                            <div class="prayer-repetition">
-                                <p>Gloria al Padre y al Hijo y al Espíritu Santo, como era en el principio, ahora y siempre, por los siglos de los siglos. Amén.</p>
-                                <p>Gloria al Padre y al Hijo y al Espíritu Santo, como era en el principio, ahora y siempre, por los siglos de los siglos. Amén.</p>
-                                <p>Gloria al Padre y al Hijo y al Espíritu Santo, como era en el principio, ahora y siempre, por los siglos de los siglos. Amén.</p>
-                            </div>
-                        </div>
-                    </div>
+            <!-- SECCIÓN PRESENTACIÓN -->
+            <section id="presentacion-section" class="content-section active">
+                <h2><i class="fas fa-info-circle"></i> Presentación</h2>
+                <div class="presentacion-content">
+                    <p>"La malvada burra con su fino diente se comió las pajas del niño inocente", dirán que es un poco simplón este modo de introducirme en la reflexión de navidad, pero pensemos un momento en esa malvada burra que no se dio cuenta del niño que había ahí, sino solamente de las pajas y prefirió poner la atención en ellas que en el propio niño. En navidad usualmente ponemos mucha atención a las pajas y poca al niño y sin embargo, en esta navidad, este niño que está en la cuna, nos hace una invitación muy urgente, no digo ni siquiera importante, aún más, muy urgente y es la invitación a la paz y a la reconciliación.</p>
                     
-                    <div class="prayer-card">
-                        <h3>Oración a la Santísima Virgen</h3>
-                        <div class="prayer-text">
-                            <p>Soberana María, que por tus grandes virtudes y especialmente por tu humildad, mereciste que todo un Dios te escogiera por madre suya, te suplico que tu misma prepares y dispongas mi alma, y la de todos los que en este tiempo hagan esta novena, para el nacimiento espiritual de tu adorado Hijo.</p>
-                            <p>¡Oh dulcísima Madre! Comunicame algo del profundo recogimiento y divina ternura con la que le agradaste, para que nos hagas menos indignos de verle, amarle y adorarle por toda la eternidad. <strong>Amén.</strong></p>
-                            <p class="prayer-instruction"><i>(Se reza nueve veces el Avemaría)</i></p>
-                            <div class="prayer-repetition">
-                                <p>Dios te salve, María, llena eres de gracia, el Señor es contigo. Bendita tú eres entre todas las mujeres, y bendito es el fruto de tu vientre, Jesús. Santa María, Madre de Dios, ruega por nosotros, pecadores, ahora y en la hora de nuestra muerte. Amén.</p>
-                                <p>Dios te salve, María, llena eres de gracia, el Señor es contigo. Bendita tú eres entre todas las mujeres, y bendito es el fruto de tu vientre, Jesús. Santa María, Madre de Dios, ruega por nosotros, pecadores, ahora y en la hora de nuestra muerte. Amén.</p>
-                                <p>Dios te salve, María, llena eres de gracia, el Señor es contigo. Bendita tú eres entre todas las mujeres, y bendito es el fruto de tu vientre, Jesús. Santa María, Madre de Dios, ruega por nosotros, pecadores, ahora y en la hora de nuestra muerte. Amén.</p>
-                                <p>Dios te salve, María, llena eres de gracia, el Señor es contigo. Bendita tú eres entre todas las mujeres, y bendito es el fruto de tu vientre, Jesús. Santa María, Madre de Dios, ruega por nosotros, pecadores, ahora y en la hora de nuestra muerte. Amén.</p>
-                                <p>Dios te salve, María, llena eres de gracia, el Señor es contigo. Bendita tú eres entre todas las mujeres, y bendito es el fruto de tu vientre, Jesús. Santa María, Madre de Dios, ruega por nosotros, pecadores, ahora y en la hora de nuestra muerte. Amén.</p>
-                                <p>Dios te salve, María, llena eres de gracia, el Señor es contigo. Bendita tú eres entre todas las mujeres, y bendito es el fruto de tu vientre, Jesús. Santa María, Madre de Dios, ruega por nosotros, pecadores, ahora y en la hora de nuestra muerte. Amén.</p>
-                                <p>Dios te salve, María, llena eres de gracia, el Señor es contigo. Bendita tú eres entre todas las mujeres, y bendito es el fruto de tu vientre, Jesús. Santa María, Madre de Dios, ruega por nosotros, pecadores, ahora y en la hora de nuestra muerte. Amén.</p>
-                                <p>Dios te salve, María, llena eres de gracia, el Señor es contigo. Bendita tú eres entre todas las mujeres, y bendito es el fruto de tu vientre, Jesús. Santa María, Madre de Dios, ruega por nosotros, pecadores, ahora y en la hora de nuestra muerte. Amén.</p>
-                                <p>Dios te salve, María, llena eres de gracia, el Señor es contigo. Bendita tú eres entre todas las mujeres, y bendito es el fruto de tu vientre, Jesús. Santa María, Madre de Dios, ruega por nosotros, pecadores, ahora y en la hora de nuestra muerte. Amén.</p>
-                            </div>
-                        </div>
-                    </div>
+                    <p>Los ángeles dijeron en su anuncio a los pastores: "Gloria a Dios en el cielo y en la tierra paz a los hombres de buena voluntad". Este anuncio de paz es el mismo Jesús, porque Él es la paz verdadera. Por ello, si queremos un país en paz, hemos de tener en cuenta, en esta navidad, que para alcanzarla necesitamos del perdón y de la reconciliación de todos los colombianos entre sí. Esto significa ser capaces de sacar de los corazones los sentimientos de venganza, de desquite y de revancha que podamos tener. Ser capaces de aceptar decisiones que van a construir una patria donde seamos hermanos que se aman y no lobos que se despedazan. Por eso, que en esta navidad demos un paso hacia adelante, lograr la paz de nuestro corazón, purificándolo con el baño de la gracia de Dios, para que realmente lo lleve a ser un corazón dispuesto a perdonar y un corazón dispuesto a reconciliarse con los hermanos.</p>
                     
-                    <div class="prayer-card">
-                        <h3>Oración a San José</h3>
-                        <div class="prayer-text">
-                            <p>¡Oh Santísimo San José! Esposo de María y padre adoptivo de Jesús. Infinitas gracias doy a Dios porque te escogió para tan altos ministerios y te adornó con todos los dones proporcionados a tan excelente grandeza.</p>
-                            <p>Te ruego, por el amor que tuviste al Divino Niño, me abrases en fervorosos deseos de verle y recibirle sacramentalmente, mientras en su divina esencia le veo y le gozo en el cielo. <strong>Amén.</strong></p>
-                            <p class="prayer-instruction"><i>(Se reza el Padrenuestro, el Avenaría y el Gloria)</i></p>
-                            <div class="prayer-repetition">
-                                <p><strong>Padrenuestro:</strong> Padre nuestro, que estás en el cielo, santificado sea tu nombre; venga a nosotros tu reino; hágase tu voluntad en la tierra como en el cielo. Danos hoy nuestro pan de cada día; perdona nuestras ofensas, como también nosotros perdonamos a los que nos ofenden; no nos dejes caer en la tentación, y líbranos del mal. Amén.</p>
-                                <p><strong>Avenaría:</strong> Dios te salve, María, llena eres de gracia, el Señor es contigo. Bendita tú eres entre todas las mujeres, y bendito es el fruto de tu vientre, Jesús. Santa María, Madre de Dios, ruega por nosotros, pecadores, ahora y en la hora de nuestra muerte. Amén.</p>
-                                <p><strong>Gloria:</strong> Gloria al Padre y al Hijo y al Espíritu Santo, como era en el principio, ahora y siempre, por los siglos de los siglos. Amén.</p>
-                            </div>
-                        </div>
-                    </div>
+                    <p>Para todos ustedes una feliz navidad en el Señor Jesús.</p>
                     
-                    <div class="prayer-card">
-                        <h3>Concién al Niño Jesús</h3>
-                        <div class="prayer-text">
-                            <p>Acordados ¡Oh dulcísimo Niño Jesús! que dijiste a la Venerable Margarita del Santísimo Sacramento, y en persona suya a todos tus devotos, estas palabras tan consoladoras para nuestra pobre humanidad agobiada y doliente: "Todo lo que quieras pedir, pídelo por los méritos de mi infancia y nada te será negado".</p>
-                            <p>Llenos de confianza en Ti ¡Oh Jesús, que eres la misma verdad! Venimos a exponerte toda nuestra miseria.</p>
-                            <p>Ayudadnos a llevar una vida santa, para conseguir una eternidad bienaventurada. Concédenos, por los méritos de tu encarnación y de tu infancia, la gracia… de la cual necesitamos tanto.</p>
-                            <p>Nos entregamos a Ti ¡Oh Niño omnipotente! Seguros de que no quedará frustrada nuestra esperanza, y de que en virtud de tu divina promesa, acogerás y despacharas favorablemente nuestra súplica. <strong>Amén.</strong></p>
-                            <p class="prayer-instruction"><i>(Todo lo demás como el día primero)</i></p>
-                        </div>
+                    <div class="firma">
+                        <p><strong>Monseñor Luis Augusto Castro Quiroga</strong></p>
+                        <p>Arzobispo de Tunja</p>
+                        <p>Presidente de la Conferencia Episcopal de Colombia</p>
                     </div>
                 </div>
             </section>
 
+            <!-- SECCIÓN METODOLOGÍA -->
+            <section id="metodologia-section" class="content-section">
+                <h2><i class="fas fa-list-ol"></i> Metodología</h2>
+                <div class="metodologia-content">
+                    <p>Se sugiere que para cada día de la novena se sigan los siguientes pasos:</p>
+                    <ol class="pasos-metodologia">
+                        <li><strong>Villancico</strong> - Iniciar con un villancico navideño</li>
+                        <li><strong>Ambientación</strong>
+                            <ul>
+                                <li>Disponer previamente lugar donde se va a realizar la novena y favorecer un clima comunitario y de confianza.</li>
+                                <li>Preparar con anticipación un signo que ayude a la reflexión de cada día.</li>
+                                <li>Brindar a los participantes una bienvenida afectuosa y cordial en la que perciban la cercanía y el ambiente de familia en el que se desarrollará la novena de navidad.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Oración para todos los días</strong></li>
+                        <li><strong>Lectura de la Palabra de Dios</strong></li>
+                        <li><strong>Meditación</strong></li>
+                        <li><strong>Gozos</strong></li>
+                        <li><strong>Oraciones</strong> - A la Virgen María, a san José y al Niño Jesús.</li>
+                        <li><strong>Compromiso</strong></li>
+                        <li><strong>Villancicos</strong></li>
+                    </ol>
+                </div>
+            </section>
+
+            <!-- SECCIÓN ORACIONES -->
+            <section id="oraciones-section" class="content-section">
+                <h2><i class="fas fa-praying-hands"></i> Oraciones Diarias</h2>
+                <div class="prayers-container">
+                    <div class="prayer-card">
+                        <h3>ORACIÓN PARA TODOS LOS DÍAS</h3>
+                        <div class="prayer-text">
+                            <p>Benignísimo Dios de infinita caridad, que nos has amado tanto y que nos diste en tu hijo la mejor prenda de tu amor, para que hecho hombre en las entrañas de una virgen naciese en un pesebre para nuestra salud y remedio. Yo en nombre de todos los mortales te doy infinitas gracias por tan soberano beneficio. En retorno de él te ofrezco la pobreza, humildad y demás virtudes de tu hijo humanado, y te suplico por sus divinos méritos, por las incomodidades en que nació y por las tiernas lágrimas que derramó en el pesebre, dispongas nuestros corazones con humildad profunda, con amor encendido y con tal desprecio de todo lo terreno, que Jesús recién nacido, tenga en ellos su cuna y more eternamente. Amén.</p>
+                            <p class="prayer-instruction"><i>(Se reza tres veces el Gloria al Padre)</i></p>
+                            <div class="prayer-repetition">
+                                <p>Gloria al Padre y al Hijo y al Espíritu Santo, como era en el principio, ahora y siempre, por los siglos de los siglos. Amén.</p>
+                            </div>
+                        </div>
+                        <button class="gozo-music-btn" data-song-id="1">
+                            <i class="fas fa-play"></i> Reproducir "Ven a nuestras almas"
+                        </button>
+                    </div>
+                    
+                    <div class="prayer-card">
+                        <h3>ORACIÓN A LA SANTÍSIMA VIRGEN MARÍA</h3>
+                        <div class="prayer-text">
+                            <p>Soberana María que por tus grandes virtudes y especialmente por tu humildad, mereciste que todo un Dios te escogiera para madres suya. Te suplico que tu misma prepares y dispongas de mi alma y de la de todos los que en este tiempo hagan esta novena, para el nacimiento de tu adorable Hijo.</p>
+                            <p>¡Oh dulcísima madre! comunicame algo del profundo recogimiento y divina ternura con que le agradaste tu para que nos hagas menos indignos de verle, amarle y adorarle por toda la eternidad. Amén.</p>
+                            <p class="prayer-instruction"><i>(Se reza tres veces el Ave María)</i></p>
+                            <div class="prayer-repetition">
+                                <p>Dios te salve, María, llena eres de gracia, el Señor es contigo. Bendita tú eres entre todas las mujeres, y bendito es el fruto de tu vientre, Jesús. Santa María, Madre de Dios, ruega por nosotros, pecadores, ahora y en la hora de nuestra muerte. Amén.</p>
+                            </div>
+                        </div>
+                        <button class="gozo-music-btn" data-song-id="1">
+                            <i class="fas fa-play"></i> Reproducir "Ven a nuestras almas"
+                        </button>
+                    </div>
+                    
+                    <div class="prayer-card">
+                        <h3>ORACIÓN A SAN JOSÉ</h3>
+                        <div class="prayer-text">
+                            <p>¡Oh Santísimo José! Esposo de María y padre putativo de Jesús. Infinitas gracias doy a Dios porque te escogió para tan altos ministerios y te adornó con todos los dones proporcionados a tan excelente grandeza. Te ruego por el amor que le tuviste al divino niño, me abraces en fervorosos deseos de verle y recibirle sacramentalmente mientras en su divina esencia le veo y le gozo en el cielo. Amén.</p>
+                            <p class="prayer-instruction"><i>(Se reza el Padre Nuestro, el Ave María y el Gloria al Padre)</i></p>
+                            <div class="prayer-repetition">
+                                <p><strong>Padre Nuestro:</strong> Padre nuestro, que estás en el cielo, santificado sea tu nombre; venga a nosotros tu reino; hágase tu voluntad en la tierra como en el cielo. Danos hoy nuestro pan de cada día; perdona nuestras ofensas, como también nosotros perdonamos a los que nos ofenden; no nos dejes caer en la tentación, y líbranos del mal. Amén.</p>
+                                <p><strong>Ave María:</strong> Dios te salve, María, llena eres de gracia, el Señor es contigo. Bendita tú eres entre todas las mujeres, y bendito es el fruto de tu vientre, Jesús. Santa María, Madre de Dios, ruega por nosotros, pecadores, ahora y en la hora de nuestra muerte. Amén.</p>
+                                <p><strong>Gloria al Padre:</strong> Gloria al Padre y al Hijo y al Espíritu Santo, como era en el principio, ahora y siempre, por los siglos de los siglos. Amén.</p>
+                            </div>
+                        </div>
+                        <button class="gozo-music-btn" data-song-id="1">
+                            <i class="fas fa-play"></i> Reproducir "Ven a nuestras almas"
+                        </button>
+                    </div>
+                    
+                    <div class="prayer-card">
+                        <h3>ORACIÓN AL NIÑO JESÚS</h3>
+                        <div class="prayer-text">
+                            <p>Acuérdate ¡Oh dulcísimo Niño Jesús! que dijiste a la venerable Margarita del Santísimo Sacramento, y en persona suya a todos tus devotos, estas palabras tan consoladoras para nuestra pobre humanidad agobiada y doliente: "Todo lo que quieras pedir, pídelo por los méritos de mi infancia, y nada te será negado".</p>
+                            <p>Llenos de confianza en Ti ¡Oh Jesús, que eres la misma verdad! venimos a exponerte toda nuestra miseria. Ayúdanos a llevar una vida santa, para conseguir una eternidad bienaventurada.</p>
+                            <p>Concédenos, por los méritos infinitos de tu Encarnación y de tu infancia, la gracia, de la cual necesitamos tanto. Nos entregamos a ti ¡Oh Niño omnipotente! seguros de que no quedará frustrada nuestra esperanza, y de que en virtud de tu divina promesa, acogerás y despacharás favorablemente nuestra súplica. Amén.</p>
+                            <p class="prayer-instruction"><i>(Se reza tres veces el Gloria al Padre)</i></p>
+                            <div class="prayer-repetition">
+                                <p>Gloria al Padre y al Hijo y al Espíritu Santo, como era en el principio, ahora y siempre, por los siglos de los siglos. Amén.</p>
+                            </div>
+                        </div>
+                        <button class="gozo-music-btn" data-song-id="1">
+                            <i class="fas fa-play"></i> Reproducir "Ven a nuestras almas"
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECCIÓN GOZOS -->
+            <section id="gozos-section" class="content-section">
+                <h2><i class="fas fa-star-of-david"></i> Gozos de la Novena</h2>
+                <div class="gozos-container" id="gozos-container">
+                    <!-- Los gozos se cargarán dinámicamente desde data.js -->
+                </div>
+            </section>
+
+            <!-- SECCIÓN CONSIDERACIONES -->
             <section id="consideraciones-section" class="content-section">
                 <h2><i class="fas fa-lightbulb"></i> Consideraciones Diarias</h2>
                 <div class="days-selector">
                     <div class="days-buttons" id="days-buttons"></div>
                 </div>
                 <div class="consideration-display">
-                    <h3 id="consideration-title">Consideración del Día 1</h3>
-                    <div class="consideration-text" id="consideration-text"></div>
+                    <h3 id="consideration-date">16 de diciembre</h3>
+                    <h4 id="consideration-title">DIOS PADRE FUENTE DE LA MISERICORDIA</h4>
+                    
+                    <div class="consideration-section">
+                        <h5><i class="fas fa-cross"></i> Signo del día:</h5>
+                        <p id="consideration-signo">Preparar con anticipación el pesebre resaltando en este día la imagen de Dios Padre y ambientarla con un cirio encendido.</p>
+                    </div>
+                    
+                    <div class="consideration-section">
+                        <h5><i class="fas fa-bible"></i> Lectura de la Palabra de Dios:</h5>
+                        <p id="consideration-lectura">Jn 3,16-17 - 'Porque tanto amó Dios al mundo, que entregó a su Unigénito, para que todo el que cree en él no perezca, sino que tenga vida eterna. Porque Dios no envió a su Hijo al mundo para juzgar al mundo, sino para que el mundo se salve por él.'</p>
+                    </div>
+                    
+                    <div class="consideration-section">
+                        <h5><i class="fas fa-brain"></i> Meditación:</h5>
+                        <div class="consideration-text" id="consideration-text">
+                            <!-- La meditación se cargará dinámicamente -->
+                        </div>
+                    </div>
+                    
+                    <div class="consideration-section">
+                        <h5><i class="fas fa-handshake"></i> Compromiso del día:</h5>
+                        <p id="consideration-compromiso">Practicar una obra de misericordia en la familia.</p>
+                    </div>
+                    
+                    <button class="gozo-music-btn consideration-play-btn" data-song-id="1">
+                        <i class="fas fa-play"></i> Reproducir Gozos
+                    </button>
                 </div>
             </section>
 
+            <!-- SECCIÓN VILLANCICOS -->
             <section id="villancicos-section" class="content-section">
                 <h2><i class="fas fa-guitar"></i> Villancicos Navideños</h2>
                 <div class="villancicos-container">
-                    <div class="villancico-card">
-                        <h3>Tutaina (Tradicional Española)</h3>
-                        <div class="villancico-text">
-                            <p class="villancico-refrain">Tutaina tuturuma<br>Tutaina tuturumaina<br>Tutaina tuturuma, turuma<br>Tutaina tuturumaina.</p>
-                            <p>Los pastores de Belén<br>Vienen a adorar el niño;<br>La virgen y san José<br>Los reciben con cariño.</p>
-                            <p class="villancico-refrain">Tutaina tuturuma<br>Tutaina tuturumaina<br>Tutaina tuturuma, turuma<br>Tutaina tuturumaina.</p>
-                            <p>Tres reyes vienen también<br>Con incienso, mirra y oro,<br>A ofrecer a Dios su bien<br>Como el más grande tesoro.</p>
-                            <p class="villancico-refrain">Tutaina tuturuma<br>Tutaina tuturumaina<br>Tutaina tuturuma, turuma<br>Tutaina tuturumaina.</p>
-                        </div>
-                        <button class="villancico-play-btn" data-song-id="2">
-                            <i class="fas fa-play"></i> Reproducir Tutaina
-                        </button>
-                    </div>
-                    
-                    <div class="villancico-card">
-                        <h3>A la nanita nana (Tradicional Española)</h3>
-                        <div class="villancico-text">
-                            <p class="villancico-refrain">A la nanita nana, nanita ea, nanita ea,<br>mi Jesús tiene sueño, bendito sea, bendito sea.</p>
-                            <p>Fuentecilla que corres clara y sonora<br>ruiseñor en la selva cantando lloras<br>callad mientras la cuna se balancea<br>a la nanita nana, nanita ea.</p>
-                            <p class="villancico-refrain">A la nanita nana, nanita ea, nanita ea,<br>mi Jesús tiene sueño, bendito sea, bendito sea.</p>
-                            <p>Manojito de rosas y de alelíes<br>¿Qué es lo que estás soñando que te sonríes?<br>Cuáles son tus sueños, dilo alma mía,<br>mas. ¿Qué es lo que murmuras? Eucaristía.</p>
-                            <p class="villancico-refrain">A la nanita nana, nanita ea, nanita ea,<br>mi Jesús tiene sueño, bendito sea, bendito sea.</p>
-                        </div>
-                        <button class="villancico-play-btn" data-song-id="3">
-                            <i class="fas fa-play"></i> Reproducir A la nanita nana
-                        </button>
-                    </div>
-                    
-                    <div class="villancico-card">
-                        <h3>Campana sobre campana (Tradicional Andaluza)</h3>
-                        <div class="villancico-text">
-                            <p>Campana sobre campana,<br>y sobre campana una,<br>asómate a la ventana,<br>verás al Niño en la cuna.</p>
-                            <p class="villancico-refrain">Belén, campanas de Belén,<br>que los ángeles tocan<br>¿qué nueva me traéis?</p>
-                            <p>Recogido tu rebaño<br>¿a dónde vas pastorcillo?<br>Voy a llevar al portal<br>requesón, manteca y vino.</p>
-                            <p class="villancico-refrain">Belén, campanas de Belén,<br>que los ángeles tocan<br>¿qué nueva me traéis?</p>
-                        </div>
-                        <button class="villancico-play-btn" data-song-id="4">
-                            <i class="fas fa-play"></i> Reproducir Campana sobre campana
-                        </button>
-                    </div>
-                    
-                    <div class="villancico-card">
-                        <h3>El tamborilero (Katherine K. Davis)</h3>
-                        <div class="villancico-text">
-                            <p>El camino que lleva a Belén<br>baja hasta el valle que la nieve cubrió.</p>
-                            <p>Los pastorcillos quieren ver a su Rey,<br>le traen regalos en su humilde zurrón<br>al Redentor, al Redentor.</p>
-                            <p>Yo quisiera poner a tu pies<br>algún presente que te agrade Señor,<br>mas Tú ya sabes que soy pobre también,<br>y no poseo más que un viejo tambor.</p>
-                            <p class="villancico-refrain">(rom pom pom pom, rom pom pom)</p>
-                            <p>¡En tu honor frente al portal tocaré con mi tambor!</p>
-                        </div>
-                        <button class="villancico-play-btn" data-song-id="5">
-                            <i class="fas fa-play"></i> Reproducir El tamborilero
-                        </button>
-                    </div>
-                    
-                    <div class="villancico-card">
-                        <h3>Noche de paz</h3>
-                        <div class="villancico-text">
-                            <p class="villancico-author">Letra: Joseph Mohr, 1792-1848<br>Música: Franz Gruber, 1787-1863</p>
-                            <p>Noche de paz, noche de amor<br>Todo duerme en derredor<br>sólo velan mirando la faz de su niño<br>en angélica paz José y María en Belén<br>José y María en Belén</p>
-                            <p>Noche de paz, noche de amor<br>Llena el cielo un resplandor<br>en la altura resuena un cantar:<br>os anuncio una dicha sin par<br>que en la tierra ha nacido Dios hoy<br>en Belén de Judá<br>Hoy en Belén de Judá</p>
-                        </div>
-                        <button class="villancico-play-btn" data-song-id="6">
-                            <i class="fas fa-play"></i> Reproducir Noche de paz
-                        </button>
-                    </div>
+                    <!-- Los villancicos se cargarán dinámicamente desde data.js -->
                 </div>
             </section>
         </main>
 
+        <!-- REPRODUCTOR DE MÚSICA FIJO -->
         <div class="music-player-fixed">
             <div class="player-info">
                 <span id="now-playing">Seleccione una canción</span>
@@ -212,8 +231,8 @@
         </div>
 
         <footer class="footer">
-            <p>Página diseñada para facilitar el rezo de la Novena de Aguinaldos</p>
-            <p>© 2023 Novena de Aguinaldos - Mi Municipio Digital</p>
+            <p>Página diseñada para facilitar el rezo de la Novena de Navidad 2025</p>
+            <p>© 2025 Novena de Navidad - Los Gestos de la Misericordia</p>
         </footer>
     </div>
 
