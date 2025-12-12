@@ -186,31 +186,31 @@ const canciones = [
     { 
         id: 1, 
         title: "Ven a nuestras almas", 
-        file: "ven-a-nuestras-almas.mp3" 
+        file: "musica/ven-a-nuestras-almas.mp3" 
     },
     { 
         id: 2, 
         title: "Tutaina", 
-        file: "tutaina.mp3" 
+        file: "musica/tutaina.mp3" 
     },
     { 
         id: 3, 
         title: "A la nanita nana", 
-        file: "nanita-nana.mp3" 
+        file: "musica/nanita-nana.mp3" 
     },
     { 
         id: 4, 
         title: "Campana sobre campana", 
-        file: "campana-sobre-campana.mp3" 
+        file: "musica/campana-sobre-campana.mp3" 
     },
     { 
         id: 5, 
         title: "El tamborilero", 
-        file: "tamborilero.mp3" 
+        file: "musica/tamborilero.mp3" 
     },
     { 
         id: 6, 
         title: "Noche de paz", 
-        file: "noche-de-paz.mp3" 
+        file: "musica/noche-de-paz.mp3" 
     }
 ];
