@@ -170,9 +170,8 @@ function playCurrentSong() {
     
     audioPlayer.play().then(() => {
         nowPlaying.textContent = `Reproduciendo: ${canciones[currentSongIndex].title}`;
-    }).catch(error => {
-        console.log("Audio cargado correctamente, reproduciendo...");
-        audioPlayer.play();
+    }).catch(() => {
+        nowPlaying.textContent = "Error al cargar la música";
     });
 }
 
