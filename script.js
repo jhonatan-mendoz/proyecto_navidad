@@ -69,13 +69,15 @@ function setupGozos() {
         const gozoCard = document.createElement('div');
         gozoCard.className = 'gozo-card';
         
+        // AGREGAR TÍTULO
         let gozoContent = `<h3>${gozo.title}</h3>`;
         
-        // AGREGAR CADA SECCIÓN CON SU BOTÓN DESPUÉS
+        // AGREGAR CADA SECCIÓN
         gozo.sections.forEach((section, index) => {
+            // Agregar el texto de la estrofa
             gozoContent += `<div class="gozo-text">${section.text}</div>`;
             
-            // AGREGAR BOTÓN DE REPRODUCCIÓN DESPUÉS DE CADA ESTROFA
+            // AGREGAR BOTÓN DESPUÉS DE CADA ESTROFA
             gozoContent += `
                 <button class="gozo-music-btn" data-song-id="6">
                     <i class="fas fa-play"></i> Reproducir "Ven a nuestras almas"
@@ -87,7 +89,7 @@ function setupGozos() {
         gozosContainer.appendChild(gozoCard);
     });
     
-    // CONFIGURAR BOTONES DE REPRODUCCIÓN
+    // CONFIGURAR EVENTOS DE LOS BOTONES
     const gozoMusicBtns = document.querySelectorAll('.gozo-music-btn');
     gozoMusicBtns.forEach(btn => {
         btn.addEventListener('click', () => {
