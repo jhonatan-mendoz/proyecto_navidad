@@ -78,8 +78,7 @@ y aún más que mis frases, te dice mi llanto.`
 ven a nuestras almas! ¡Ven, no tardes tanto!`
             }
         ]
-    }
-];
+    }];
 
 const consideraciones = [
     {
