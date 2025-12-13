@@ -32,13 +32,12 @@ function initApp() {
 }
 
 function setupCurrentDay() {
-    // Obtener el día actual (16-24 de diciembre)
     const today = new Date();
     const currentDate = today.getDate();
     if (currentDate >= 16 && currentDate <= 24) {
-        currentDay = currentDate - 15; // 16 dic = día 1, 17 dic = día 2, etc.
+        currentDay = currentDate - 15;
     } else {
-        currentDay = 1; // Por defecto, día 1
+        currentDay = 1;
     }
     updateDayIndicator();
 }
@@ -70,17 +69,25 @@ function setupGozos() {
         const gozoCard = document.createElement('div');
         gozoCard.className = 'gozo-card';
         
-        gozoCard.innerHTML = `
-            <h3>${gozo.title}</h3>
-            <div class="gozo-text">${gozo.text}</div>
-            <button class="gozo-music-btn" data-song-id="6">
-                <i class="fas fa-play"></i> Reproducir "Ven a nuestras almas"
-            </button>
-        `;
+        let gozoContent = `<h3>${gozo.title}</h3>`;
         
+        // AGREGAR CADA SECCIÓN CON SU BOTÓN DESPUÉS
+        gozo.sections.forEach((section, index) => {
+            gozoContent += `<div class="gozo-text">${section.text}</div>`;
+            
+            // AGREGAR BOTÓN DE REPRODUCCIÓN DESPUÉS DE CADA ESTROFA
+            gozoContent += `
+                <button class="gozo-music-btn" data-song-id="6">
+                    <i class="fas fa-play"></i> Reproducir "Ven a nuestras almas"
+                </button>
+            `;
+        });
+        
+        gozoCard.innerHTML = gozoContent;
         gozosContainer.appendChild(gozoCard);
     });
     
+    // CONFIGURAR BOTONES DE REPRODUCCIÓN
     const gozoMusicBtns = document.querySelectorAll('.gozo-music-btn');
     gozoMusicBtns.forEach(btn => {
         btn.addEventListener('click', () => {
