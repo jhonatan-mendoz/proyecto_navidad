@@ -2,66 +2,82 @@ const gozos = [
     {
         id: 1,
         title: "GOZOS",
-        text: `Dulce Jesús mío, mi Niño adorado,
-¡Ven a nuestras almas! ¡Ven, no tardes tanto!
-
-¡Oh Sapiencia suma del Dios soberano,
+        sections: [
+            {
+                text: `Dulce Jesús mío, mi Niño adorado,
+¡Ven a nuestras almas! ¡Ven, no tardes tanto!`
+            },
+            {
+                text: `¡Oh Sapiencia suma del Dios soberano,
 que a infantil alcance te rebajas sacro!
 ¡Oh Niño divino, ven para enseñarnos
-la prudencia que hace verdaderos sabios!
-
-¡Oh, Adonaí potente que a Moisés hablando,
+la prudencia que hace verdaderos sabios!`
+            },
+            {
+                text: `¡Oh, Adonaí potente que a Moisés hablando,
 de Israel al pueblo diste los mandatos!,
 Ah, ven prontamente para rescatarnos,
-y que un niño débil muestre fuerte brazo.
-
-¡Oh raíz sagrada de Jesé que en lo alto
+y que un niño débil muestre fuerte brazo.`
+            },
+            {
+                text: `¡Oh raíz sagrada de Jesé que en lo alto
 presentas al orbe tu fragante nardo!
 ¡Dulcísimo Niño que has sido llamado
-lirio de los valles, bella flor del campo!
-
-Llave de David que abre al desterrado
+lirio de los valles, bella flor del campo!`
+            },
+            {
+                text: `Llave de David que abre al desterrado
 las cerradas puertas del regio palacio!
 ¡Sácanos, oh Niño, con tu blanca mano,
-de la cárcel triste que labró el pecado!
-
-¡Oh lumbre de oriente, Sol de eternos rayos,
+de la cárcel triste que labró el pecado!`
+            },
+            {
+                text: `¡Oh lumbre de oriente, Sol de eternos rayos,
 que entre las tinieblas, tu esplendor veamos!
 Niño tan precioso, dicha del cristiano,
-luzca la sonrisa de tus dulces labios.
-
-Espejo sin mancha, Santo de los santos,
+luzca la sonrisa de tus dulces labios.`
+            },
+            {
+                text: `Espejo sin mancha, Santo de los santos,
 sin igual imagen del Dios soberano.
 Borra nuestras culpas, salva al desterrado
-y en forma de niño da al mísero, amparo.
-
-Rey de las naciones, Emmanuel preclaro,
+y en forma de niño da al mísero, amparo.`
+            },
+            {
+                text: `Rey de las naciones, Emmanuel preclaro,
 de Israel anhelo, Pastor del rebaño.
 ¡Niño que apacientas, con suave cayado,
-ya la oveja arisca, ya el cordero manso!
-
-¡Ábranse los cielos y llueva de lo alto,
+ya la oveja arisca, ya el cordero manso!`
+            },
+            {
+                text: `¡Ábranse los cielos y llueva de lo alto,
 bienhechor rocío como riego santo!
 ¡Ven, hermoso Niño, ven, Dios humanado!
-¡Luce, hermosa estrella! ¡brota, flor del campo!
-
-Ven, que ya María, previene sus brazos,
+¡Luce, hermosa estrella! ¡brota, flor del campo!`
+            },
+            {
+                text: `Ven, que ya María, previene sus brazos,
 do su Niño vean en tiempo cercano.
 Ven, que ya José, con anhelo sacro,
-se dispone a hacerse de tu amor sagrario.
-
-¡Del débil auxilio, del doliente amparo,
+se dispone a hacerse de tu amor sagrario.`
+            },
+            {
+                text: `¡Del débil auxilio, del doliente amparo,
 consuelo del triste, luz del desterrado.
 Vida de mi vida, mi dueño adorado,
-mi constante amigo, mi divino hermano!
-
-¡Véante mis ojos, de ti enamorados!
+mi constante amigo, mi divino hermano!`
+            },
+            {
+                text: `¡Véante mis ojos, de ti enamorados!
 ¡Bese ya tus plantas! Bese ya tus manos.
 Prosternado en tierra te tiendo los brazos,
-y aún más que mis frases, te dice mi llanto.
-
-¡Ven, Salvador nuestro, por quien suspiramos;
+y aún más que mis frases, te dice mi llanto.`
+            },
+            {
+                text: `¡Ven, Salvador nuestro, por quien suspiramos;
 ven a nuestras almas! ¡Ven, no tardes tanto!`
+            }
+        ]
     }
 ];
 
